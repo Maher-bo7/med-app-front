@@ -1,0 +1,44 @@
+<header>
+  <mat-toolbar class="tool-bar">
+    <button mat-icon-button (click)="toggleSideBar()"class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon style="color:white">menu</mat-icon>
+    </button>
+    <span style="color:white">MedApp</span>
+
+
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+      <ul fxLayout="row" fxLayoutGap="20px">
+
+          <button mat-icon-button>
+            <mat-icon style="color:white">settings</mat-icon>
+          </button>
+
+
+
+
+          <button mat-icon-button>
+            <mat-icon style="color:white">help_outline </mat-icon>
+          </button>
+
+
+
+
+          <button mat-icon-button [routerLink]="['login']">
+
+            <mat-icon style="color:white">exit_to_app </mat-icon>
+          </button>
+
+
+
+
+      </ul>
+    </div>
+
+
+
+
+  </mat-toolbar>
+</header>
+
+

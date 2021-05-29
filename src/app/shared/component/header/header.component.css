@@ -1,0 +1,10 @@
+.example-spacer {
+  flex: 1 1 auto;
+  width: 10%;
+
+}
+.tool-bar{
+  background-color:#352b91;
+  /* height: 50%; */
+
+}

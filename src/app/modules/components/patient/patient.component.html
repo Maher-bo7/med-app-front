@@ -1,0 +1,216 @@
+<div fxLAyout="column" class="main-container">
+  <div fxLAyout="row" fxFlex="78%" class="container">
+
+    <div fxLAyout="column">
+
+      <!-- <div>
+        <mat-form-field class="search-form">
+          <mat-label>Clearable input</mat-label>
+          <input matInput type="text" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div> -->
+
+      <div class="crud-bar">
+        <a mat-raised-button
+      (click)="onAddPatient()">
+          <mat-icon>note_add</mat-icon>
+          Ajouter
+        </a>
+        <a mat-raised-button
+        (click)="onUpdatePatient()">
+          <mat-icon>edit</mat-icon>
+          Modifier
+        </a>
+        <a mat-raised-button routerLink=".">
+          <mat-icon>print</mat-icon>
+         Imprimer
+        </a>
+        <a mat-raised-button routerLink="."
+        (click)="onDeletePatient()">
+          <mat-icon>delete_forever</mat-icon>
+          Supprimer
+        </a>
+
+        <!-- <a mat-raised-button routerLink=".">
+          <mat-icon>Rendez-vous</mat-icon>
+          Supprimer
+        </a> -->
+
+      </div>
+
+      <hr>
+      <div>
+        <div>
+          <a mat-raised-button routerLink="."
+          (click)="onFirstPatient()">
+
+            <mat-icon>first_page</mat-icon>
+          </a>
+          <a mat-raised-button routerLink="."
+          (click)="onPreviousPatient()">
+            <mat-icon>navigate_before</mat-icon>
+          </a>
+          <a mat-raised-button routerLink="."
+          (click)="onNextPatient()">
+            <mat-icon>navigate_next</mat-icon>
+          </a>
+          <a mat-raised-button routerLink="."
+          (click)="onLastPatient()">
+            <mat-icon>last_page</mat-icon>
+          </a>
+        </div>
+
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+
+        <ul fxLayout="row" fxLayoutGap="15px">
+
+          <a mat-raised-button routerLink=".">
+            <mat-icon>search</mat-icon>
+            Rechercher
+          </a>
+
+
+
+          <a mat-raised-button routerLink=".">
+            <mat-icon>list</mat-icon>
+           Lister
+          </a>
+
+
+
+          <a mat-raised-button routerLink=".">
+            <mat-icon>history</mat-icon>
+           Historique
+          </a>
+
+
+
+
+        </ul>
+      </div>
+
+    </div>
+
+
+    </div>
+
+
+
+<div>
+  <div  fxLayout="row"class="title">
+    <span>
+      Fiche patient n°:
+    </span>
+  </div>
+  <br>
+  <div class="form-container">
+    <form [formGroup]="patientForm" class="example-form">
+      <mat-form-field >
+        <mat-label>Numéro</mat-label>
+        <input matInput  disabled value="numéro du patient">
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+        <td>
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Nom:</mat-label>
+            <input matInput formControlName="fName" placeholder="nom">
+            <mat-icon matSuffix>person_outline</mat-icon>
+            <mat-hint>nom de famille</mat-hint>
+          </mat-form-field>
+      </td>
+        <td>
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Prénom:</mat-label>
+            <input matInput formControlName="lName" placeholder="prénom">
+            <mat-hint>prénom</mat-hint>
+            <mat-icon matSuffix>person_outline</mat-icon>
+
+          </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="form-field"appearance="fill">
+          <mat-label>Date de naissance</mat-label>
+          <input matInput formControlName="dateBirth"[matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+      </td>
+      </tr>
+    </table>
+
+      <p>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Adresse</mat-label>
+          <textarea matInput formControlName="address" placeholder="Ex. 100 Main St"></textarea>
+          <mat-icon matSuffix>location_on</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+        <td>
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>numéro de téléphone:</mat-label>
+            <input matInput formControlName="phone" placeholder="Your Phone">
+            <mat-icon matSuffix>phone</mat-icon>
+            <!-- <mat-hint>Phone number with Country code</mat-hint> -->
+          </mat-form-field>
+      </td>
+        <td>
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Email:</mat-label>
+            <input matInput formControlName="email"placeholder=" email">
+            <mat-icon matSuffix>mail_outline</mat-icon>
+            <mat-hint>L'addresse email doit etre valide</mat-hint>
+          </mat-form-field>
+      </td>
+        <td>
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Profession:</mat-label>
+            <input matInput formControlName="job" placeholder="Profession">
+            <mat-icon matSuffix>work_outline</mat-icon>
+
+          </mat-form-field>
+      </td>
+      </tr>
+      <tr>
+        <td>
+           <button mat-stroked-button
+          color="primary"
+          (click)="onSubmitPatient()">
+          Enregistrer
+        </button>
+        <button mat-stroked-button color="warn"
+        (click)="onCancelPatient()">
+          Annuler
+        </button>
+      </td>
+      <td>
+        <button mat-fab color="primary">
+          <mat-icon>schedule</mat-icon>
+        </button>
+        <span class="text">
+          Rendez-vous
+        </span>
+      </td>
+      </tr>
+    </table>
+    </form>
+  </div>
+
+</div>
+
+  </div>
+
+
+  <div fxFlex class="panel">
+
+
+  </div>
+
+</div>

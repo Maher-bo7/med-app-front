@@ -1,0 +1,55 @@
+<div class="side-container">
+  <mat-nav-list>
+    <!-- <div class="profile-card">
+     <img src="/assets/images/backgrounds/secretaire.jpg" alt="Name">
+       <div class="header">
+           <h2>name</h2>
+
+       </div>
+
+   </div>
+    -->
+   <mat-divider></mat-divider>
+<br>
+ <mat-divider></mat-divider>
+ <h2 matSubheader>
+   <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+   <span class="txt">
+     MENU
+
+   </span>
+ </h2>
+ <mat-divider></mat-divider>
+
+ <a mat-list-item [routerLink]="['default/dashboard/calendar']" routerLinkActive="router-link-active" >
+   <mat-icon>calendar_today</mat-icon>
+    <span class="txt">
+      -Calendrier-
+     </span>
+     </a>
+ <a mat-list-item [routerLink]="['default/dashboard/patient']" routerLinkActive="router-link-active" >
+   <mat-icon> person_pin</mat-icon>
+    <span class="txt">
+      -Patients-
+
+    </span>
+
+   </a>
+ <a mat-list-item [routerLink]="['default/dashboard/caisse']">
+   <mat-icon> money</mat-icon>
+   <span class="txt">
+     -Caisse-
+
+   </span>
+ </a>
+
+ <mat-divider></mat-divider>
+</mat-nav-list>
+
+</div>
+
+
+
+
+
+

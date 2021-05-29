@@ -1,0 +1,81 @@
+<div id="login" class="inner-scroll" >
+
+  <div id="login-intro" >
+
+    <div class="logo" >
+        <!-- <img src="#"> -->
+    </div>
+    <br>
+    <br>
+    <div class="title" >
+        Welcome!!!!!
+    </div>
+
+    <div class="description" >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat,
+        vel convallis elit fermentum pellentesque. Sed mollis velit facilisis facilisis viverra.
+    </div>
+
+  </div>
+
+
+
+  <div id="login-form-wrapper">
+
+
+          <!-- <div class="logo" >
+              <img src="#">
+          </div> -->
+
+          <div class="title">LOGIN TO YOUR ACCOUNT</div>
+          <br>
+          <form name="loginForm" [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
+
+
+            <p>
+              <mat-form-field class="field" appearance="outline">
+                <mat-label>Email Address:</mat-label>
+                <input matInput formControlName="email"placeholder="Your email"  required >
+                <mat-icon matSuffix>mail_outline</mat-icon>
+                <mat-hint>Input the fully qualified email address</mat-hint>
+              </mat-form-field>
+            </p>
+            <mat-form-field class="field" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password"placeholder="Your password"  required >
+              <mat-icon matSuffix>lock</mat-icon>
+              <mat-hint>Min 8 char 1 number and 1 alpha</mat-hint>
+            </mat-form-field>
+
+
+
+
+              <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column"
+                   fxLayoutAlign="space-between center">
+                  <mat-checkbox class="remember-me" aria-label="Remember Me">
+                      Remember Me
+                  </mat-checkbox>
+
+                  <a class="forgot-password" >
+                      Forgot Password?
+                  </a>
+              </div>
+
+              <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN"
+                      [disabled]="loginForm.invalid">
+                  LOGIN
+              </button>
+
+          </form>
+
+
+
+
+<!--
+          <div class="register" fxLayout="column" fxLayoutAlign="center center">
+              <span class="text">Don't have an account?</span>
+              <a class="link" >Create an account</a>
+          </div> -->
+
+  </div>
+</div>
